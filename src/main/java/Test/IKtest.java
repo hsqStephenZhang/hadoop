@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.StringReader;
 
 
+// 测试IK的分词效果
 public class IKtest {
     public static void main(String[] args) {
         String text = "我们在测试智能分词的运行效果实例";

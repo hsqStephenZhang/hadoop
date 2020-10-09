@@ -17,6 +17,7 @@ public class App  {
         Configuration conf = new Configuration();
         conf.set("fs.hdfs.impl", "org.apache.hadoop.hdfs.DistributedFileSystem");
 
+        // 修改为自己的hdfs的路径
         String filePath = "hdfs://10.0.0.2:9000/input/test.txt";
         Path path1 = new Path(filePath);
         String putPath ="hdfs://10.0.0.2:9000/input/write.txt";
@@ -26,6 +27,7 @@ public class App  {
         FSDataInputStream is = fs.open(path1);
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
+        // 读取文件的一行
         String content = br.readLine();
         System.out.println(content);
         br.close();
@@ -38,7 +40,7 @@ public class App  {
     }
 }
 
-
+// 输出hadoop的一些配置信息
 class TestConf{
     public static void main(String[] args) throws IOException {
         Configuration configuration=new Configuration();
@@ -53,10 +55,12 @@ class TestConf{
     }
 }
 
+
 class TestHdfs{
     public static void main(String[] args) throws IOException {
         Configuration conf=new Configuration();
         conf.set("HADOOP_USER_NAME","hadoop");
+        // 每次都需要加上这个配置，否则无法找到hdfs文件
         conf.set("fs.defaultFS", "hdfs://10.0.0.2:9000");
         FileSystem fs= FileSystem.get(conf);
         RemoteIterator<LocatedFileStatus> listFiles=fs.listFiles(new Path("/"),true);
@@ -77,6 +81,7 @@ class TestHdfs{
     }
 }
 
+// 上传和下载的测试，请自行修改文件，这里是新建了upload，上传之后，下载为download
 class PutGet{
     public static void main(String[] args) throws IOException {
         Configuration conf=new Configuration();

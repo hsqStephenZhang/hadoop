@@ -63,6 +63,7 @@ class SecondMap extends Mapper<LongWritable, Text, Text, IntWritable> {
         //过滤掉不要处理的文件
         FileSplit fileSplit = (FileSplit) context.getInputSplit();
 
+        // part-r-00003 是统计的文章个数
         if (!fileSplit.getPath().getName().contains("part-r-00003")) {
             String[] words = value.toString().trim().split("\t");
             if (words.length>=2) {

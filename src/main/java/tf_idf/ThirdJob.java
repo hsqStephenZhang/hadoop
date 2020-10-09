@@ -48,7 +48,6 @@ public class ThirdJob {
 
         Path inPath = new Path("/testOutput/first/");
         FileInputFormat.addInputPath(job, inPath);
-
         Path outPath = new Path("/testOutput/third");
         if (fs.exists(outPath)) {
             fs.delete(outPath, true);

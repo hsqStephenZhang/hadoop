@@ -21,8 +21,9 @@ import java.io.StringReader;
 public class FirstJob {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFS", "hdfs://10.0.0.2:9000");
 
+        // 一定要添加这个配置
+        conf.set("fs.defaultFS", "hdfs://10.0.0.2:9000");
         conf.set("mapreduce.app-submission.coress-platform", "true");
         conf.set("mapreduce.framework.name", "local");
 
