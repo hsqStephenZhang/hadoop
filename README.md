@@ -25,8 +25,7 @@ id + '\t' + 正文内容(不要有空白符号)
 
 这里的3是id号，下一个是一个tab键，如果不是tab键，需要在td_idf对应的代码实现中修改
 
-![image-20201009201922297](.\assets\image_format.png)
-
+![如果现实不了，请看\assets\image_format.png](.\assets\image_format.png)
 
 
 4.wordcount是自己实现的wordcount例子，拿来练手
